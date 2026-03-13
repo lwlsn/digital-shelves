@@ -2,8 +2,8 @@ const preview = document.getElementById('preview');
 const previewImg = document.getElementById('preview-img');
 const links = document.querySelectorAll('.month-link');
 
-const PREVIEW_WIDTH = 1080;
-const PREVIEW_HEIGHT = 1080;
+const PREVIEW_WIDTH =  560;
+const PREVIEW_HEIGHT = 560;
 
 links.forEach(link => {
   link.addEventListener('mouseenter', () => {
