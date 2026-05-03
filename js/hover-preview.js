@@ -17,7 +17,7 @@ links.forEach(link => {
     const maxY = vh - PREVIEW_HEIGHT -20;
 
     const x = Math.random() * maxX;
-    const y = Math.random() * maxY;
+    const y = 4 * parseFloat(getComputedStyle(document.documentElement).fontSize) + Math.random() * maxY;
     
     preview.style.left = `${x}px`;
     preview.style.top = `${y}px`;
