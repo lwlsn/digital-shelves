@@ -9,15 +9,20 @@
 <body>
 
 
- <form id="guestbook">
-  <input type="text" id="name" placeholder="Your name" >
-  <textarea id="message" placeholder="Leave a comment" required></textarea>
-  <button type="submit">Submit</button>
+<form id="guestbook">
+    <input type="text" id="name" placeholder="Your name (optional)">
+    <textarea id="message" placeholder="Leave a comment" required></textarea>
+    <input type="url" id="music_url" placeholder="A song link (optional)">
+    <button type="submit">Submit</button>
 </form>
     
 <div id="comments"></div>
 
-   <script src="js/guestbook-submit.js"></script>
+<!-- Add supabase script -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+   
+<!-- Add guestbook JS code -->
+<script src="js/guestbook-submit.js"></script>
 
 </body>
 </html>
