@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Special+Elite&display=swap');
+/* ========== GUESTBOOK FORM ========== */
+
+
+#guestbook {
+  position: relative;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Little equalizer strip across the top — same trio of colors
+   used for Bandcamp / Nina / SoundCloud in the listening log */
+#guestbook::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #629aa9, #9b6cff, #ff7700, #629aa9);
+  background-size: 200% 100%;
+  animation: eq-shift 6s linear infinite;
+}
+
+@keyframes eq-shift {
+  to { background-position: -200% 0; }
+}
+
+#guestbook input,
+#guestbook textarea {
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: #333;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+#guestbook textarea {
+  min-height: 110px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+#guestbook input::placeholder,
+#guestbook textarea::placeholder {
+  color: #333;
+  opacity: 0.45;
+}
+
+#guestbook input:focus,
+#guestbook textarea:focus {
+  outline: none;
+  border-color: #629aa9;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(98, 154, 169, 0.15);
+}
+
+/* Song link field gets the SoundCloud-orange treatment + a note icon */
+#music_url {
+  padding-right: 2.4rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff7700'%3E%3Cpath d='M9 17V5l10-2v12M9 17a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm10-4a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z' fill='none' stroke='%23ff7700' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+  background-size: 18px;
+}
+
+#music_url:focus {
+  border-color: #ff7700;
+  box-shadow: 0 0 0 3px rgba(255, 119, 0, 0.15);
+}
+
+#guestbook button {
+  align-self: flex-start;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 0.65rem 1.8rem;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#guestbook button:hover {
+  background: #629aa9;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+#guestbook button:active {
+  transform: translateY(0);
+}
+
+#guestbook button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+#guestbook input:focus-visible,
+#guestbook textarea:focus-visible,
+#guestbook button:focus-visible {
+  outline: 2px solid #629aa9;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #guestbook::before {
+    animation: none;
+  }
+}
+
+@media (max-width: 520px) {
+  #guestbook {
+    margin: 1.5rem 1rem;
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+}
+
+/* ========== COMMENTS LIST ========== */
+/* Optional — keeps rendered comments consistent with the form above,
+   echoing the .listening-log link treatment (dotted underline, yellow hover) */
+
+#comments {
+  max-width: 640px;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#comments .comment {
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+#comments .comment strong {
+  color: #629aa9;
+}
+
+#comments .comment a {
+  color: #ff7700;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 119, 0, 0.5);
+}
+
+#comments .comment a:hover {
+  background: yellow;
+}
+
+#comments .comment small {
+  display: block;
+  margin-top: 0.4rem;
+  opacity: 0.55;
+}
