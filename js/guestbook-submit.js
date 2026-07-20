@@ -25,7 +25,7 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBiMeL5SQv-MI1GKiWRY1rr35EyT5BAOlw",
+  apiKey: "__FIREBASE_API_KEY__",
   authDomain: "digitalshelves-guestbook.firebaseapp.com",
   projectId: "digitalshelves-guestbook",
   storageBucket: "digitalshelves-guestbook.firebasestorage.app",
